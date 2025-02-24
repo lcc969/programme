@@ -1,32 +1,46 @@
 <Query Kind="Statements" />
 
-new Arme[]{
-	new("hache", 7), new(),
-	new(9), new(10),
-	new("masse"), new("dague"),
-}.Dump("Nzotem alex");
-class Arme
 {
-	public string Nom;
-	public int Dommage;
+	private string _nom;
+	private string _prenom;
+	private int _Id;
+	private DateOnly _dateEmbauche;
+	
+	public Employé(string Nom,string prenom, int Id, DateOnly dateEmbauche)
+	{
+		SetNom(Nom);
+		SetPrénom(prenom);
+		SetId(Id);
+		SetdateEmbauche(dateEmbauche);
+	}
+	public string GetNom() => _nom;
+	public string GetPrénom() => _prenom;
+	
+	public void SetNom(string Nom)
+	{
+		if (string.IsNullOrWhiteSpace(Nom)) 
+			throw new ArgumentException();
+		_nom = Nom;
+	}
+	public void SetPrénom(string prenom)
+	{
+		if (prenom == null)
+			throw new ArgumentException();
+		_prenom = prenom;
+	}
+	public void SetId(int Id)
+	{
+		if (Id <= 0)
+			throw new ArgumentException();
+		_Id = Id;
+	}
 
-	public Arme(string Nom, int Dommage)
+	public void SetdateEmbauche(DateOnly dateEmbauche)
 	{
-		this.Nom = Nom;
-		this.Dommage = Dommage;
+		if (dateEmbauche == null)
+			throw new ArgumentException();
+		_dateEmbauche = dateEmbauche;
 	}
-	public Arme()
-	{
-		this.Nom = Nom;
-		this.Dommage = Dommage;
-	}
-	public Arme(string Nom)
-	{
-		this.Nom = Nom;
-		this.Dommage = Dommage;
-	}
-	public Arme( int Dommage)
-	:this(Nom,8){}
 
 
 }
