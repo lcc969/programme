@@ -1,5 +1,6 @@
 <Query Kind="Statements" />
 
+class Employé
 {
 	private string _nom;
 	private string _prenom;
