@@ -1,5 +1,6 @@
 <Query Kind="Statements" />
 
+
 class Employé
 {
 	private string _nom;
@@ -42,9 +43,9 @@ class Employé
 			throw new ArgumentException();
 		_dateEmbauche = dateEmbauche;
 	}
-	public void AfficherInfo()
+	public void AfficherInfo(string Nom,string prenom, int Id, DateOnly dateEmbauche)
 	{
-		
+		(" ID :" + Id +"Nom : " + Nom + "Prenom :" + prenom + "Date d'embauche" + dateEmbauche + "Ancienne "+CalculerAncienneté(dateEmbauche)).Dump();
 	}
 	public int CalculerAncienneté(DateOnly dateEmbauche)
 	{
@@ -54,3 +55,36 @@ class Employé
 	}
 
 }
+/*class Entreprise
+{
+	private string nomEntreprise;
+	private Employé;
+	
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
