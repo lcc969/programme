@@ -42,6 +42,15 @@ class Employé
 			throw new ArgumentException();
 		_dateEmbauche = dateEmbauche;
 	}
-
+	public void AfficherInfo()
+	{
+		
+	}
+	public int CalculerAncienneté(DateOnly dateEmbauche)
+	{
+		var today = DateTime.Today;
+	 	int Ancienneté = today.Year - dateEmbauche.Year;
+		return Ancienneté;
+	}
 
 }
